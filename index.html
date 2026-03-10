@@ -736,21 +736,29 @@
       </div>
     </div>
     <div>
-      <div class="contact-form">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
         <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Jane Mwangi">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Mwangi" required>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="jane@company.com">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required>
         </div>
         <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell me about the opportunity..."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
         </div>
-        <button class="btn-primary" onclick="alert('Please send enquiries directly to kevongobiro@gmail.com')">Send Message</button>
-      </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+        <div id="form-success" style="display:none; margin-top:1rem; padding:1rem; background:#e8f5e9; color:#2e7d32; font-size:0.9rem; border-left:3px solid #2e7d32;">
+          ✓ Message sent — I'll get back to you within 24 hours.
+        </div>
+        <div id="form-error" style="display:none; margin-top:1rem; padding:1rem; background:#fdecea; color:#c62828; font-size:0.9rem; border-left:3px solid #c62828;">
+          Something went wrong. Please email me directly at kevongobiro@gmail.com
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -758,4 +766,4 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Kelvin Ngobiro K.</span>
-  <p>© 2026 · Nairobi, Kenya · Open to 
+  <p>© 2026 · Nairobi, Kenya · Open to
